@@ -6,8 +6,9 @@ root.title('x   o')
 
 root.geometry('927x800')
 
-
 player_turn = "X"
+player_trn = 0
+
 
 def b1_config():
     b1.config(text=player_turn)
@@ -45,6 +46,25 @@ def b9_config():
     b9.config(text=player_turn)
 
 
+def b10_config():
+    player_trn + 1
+    if player_trn == 1:
+        player_turn = "Player X"
+        player_trn + 1
+    elif player_trn == 3:
+        player_turn = "Player X"
+        player_trn + 1
+    elif player_trn == 5:
+        player_turn = "Player X"
+        player_trn + 1
+    elif player_trn == 7:
+        player_turn = "Player X"
+        player_trn + 1
+    else:
+        player_turn = "Player 0"
+        player_trn + 1
+
+
 def cyan_text(text):
     print(Fore.CYAN + text + Fore.RESET)
 
@@ -67,9 +87,11 @@ b8 = tkinter.Button(root, text="", padx=100, pady=100, command=b8_config, font="
                     background="#B2DFDB")
 b9 = tkinter.Button(root, text="", padx=100, pady=100, command=b9_config, font="helvetica 14", foreground="#004D40",
                     background="#B2DFDB", )
+b10 = tkinter.Button(root, text="Next player!", padx=100, pady=100, command=b10_config, font="helvetica 14",
+                     foreground="#004D40", background="#B2DFDB", )
 
 label = tkinter.Label(text=player_turn)
-label.grid(row=4, column=1)
+label.grid(row=2, column=4 )
 
 b1.grid(row=1, column=0)
 b2.grid(row=1, column=1)
@@ -80,12 +102,12 @@ b6.grid(row=2, column=2)
 b7.grid(row=3, column=0)
 b8.grid(row=3, column=1)
 b9.grid(row=3, column=2)
+b10.grid(row=3, column=4)
 
-# start_game = input("Do you want to start the game?  (Y/N) ").capitalize()
-# if start_game == "Y":
-#
-#
-# elif start_game == "N":
-#     cyan_text("Goodbye, see you next time")
+start_game = input("Do you want to start the game?  (Y/N) ").capitalize()
+if start_game == "Y":
+    root.mainloop()
+elif start_game == "N":
+    cyan_text("Goodbye, see you next time")
 
-root.mainloop()
+
