@@ -12,46 +12,46 @@ player_trn = 0
 
 def b1_config():
     b1.config(text=player_turn)
-    board[1][1] = player_turn
+    board[0][0] = player_turn
 
 def b2_config():
     b2.config(text=player_turn)
-    board[1][2] = player_turn
+    board[0][1] = player_turn
 
 
 def b3_config():
     b3.config(text=player_turn)
-    board[1][3] = player_turn
+    board[0][2] = player_turn
 
 
 def b4_config():
     b4.config(text=player_turn)
-    board[2][1] = player_turn
+    board[1][0] = player_turn
 
 
 def b5_config():
     b5.config(text=player_turn)
-    board[2][2] = player_turn
+    board[1][1] = player_turn
 
 
 def b6_config():
     b6.config(text=player_turn)
-    board[2][3] = player_turn
+    board[1][2] = player_turn
 
 
 def b7_config():
     b7.config(text=player_turn)
-    board[3][1] = player_turn
+    board[2][0] = player_turn
 
 
 def b8_config():
     b8.config(text=player_turn)
-    board[3][2] = player_turn
+    board[2][1] = player_turn
 
 
 def b9_config():
     b9.config(text=player_turn)
-    board[3][3] = player_turn
+    board[2][2] = player_turn
 
 
 def b_quit():
@@ -60,6 +60,18 @@ def b_quit():
 
 def cyan_text(text):
     print(Fore.CYAN + text + Fore.RESET)
+
+def checker():
+    pass
+
+
+
+
+
+
+
+
+
 
 
 board = [
