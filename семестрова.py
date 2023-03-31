@@ -12,62 +12,61 @@ player_trn = 0
 
 def b1_config():
     b1.config(text=player_turn)
-
+    board[1][1] = player_turn
 
 def b2_config():
     b2.config(text=player_turn)
+    board[1][2] = player_turn
 
 
 def b3_config():
     b3.config(text=player_turn)
+    board[1][3] = player_turn
 
 
 def b4_config():
     b4.config(text=player_turn)
+    board[2][1] = player_turn
 
 
 def b5_config():
     b5.config(text=player_turn)
+    board[2][2] = player_turn
 
 
 def b6_config():
     b6.config(text=player_turn)
+    board[2][3] = player_turn
 
 
 def b7_config():
     b7.config(text=player_turn)
+    board[3][1] = player_turn
 
 
 def b8_config():
     b8.config(text=player_turn)
+    board[3][2] = player_turn
 
 
 def b9_config():
     b9.config(text=player_turn)
+    board[3][3] = player_turn
 
 
-def b10_config():
-    player_trn + 1
-    if player_trn == 1:
-        player_turn = "Player X"
-        player_trn + 1
-    elif player_trn == 3:
-        player_turn = "Player X"
-        player_trn + 1
-    elif player_trn == 5:
-        player_turn = "Player X"
-        player_trn + 1
-    elif player_trn == 7:
-        player_turn = "Player X"
-        player_trn + 1
-    else:
-        player_turn = "Player 0"
-        player_trn + 1
+def b_quit():
+    root.quit()
 
 
 def cyan_text(text):
     print(Fore.CYAN + text + Fore.RESET)
 
+
+board = [
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', ''],
+]
 
 b1 = tkinter.Button(root, text="", padx=100, pady=100, command=b1_config, font="helvetica 14", foreground="#004D40",
                     background="#B2DFDB")
@@ -87,11 +86,11 @@ b8 = tkinter.Button(root, text="", padx=100, pady=100, command=b8_config, font="
                     background="#B2DFDB")
 b9 = tkinter.Button(root, text="", padx=100, pady=100, command=b9_config, font="helvetica 14", foreground="#004D40",
                     background="#B2DFDB", )
-b10 = tkinter.Button(root, text="Next player!", padx=100, pady=100, command=b10_config, font="helvetica 14",
+b10 = tkinter.Button(root, text="Quit!", padx=100, pady=100, command=b_quit, font="helvetica 14",
                      foreground="#004D40", background="#B2DFDB", )
 
 label = tkinter.Label(text=player_turn)
-label.grid(row=2, column=4 )
+label.grid(row=2, column=4)
 
 b1.grid(row=1, column=0)
 b2.grid(row=1, column=1)
@@ -110,4 +109,5 @@ if start_game == "Y":
 elif start_game == "N":
     cyan_text("Goodbye, see you next time")
 
-
+# hello world
+print(board)
