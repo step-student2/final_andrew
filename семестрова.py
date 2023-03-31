@@ -1,3 +1,5 @@
+import time
+
 from colorama import Fore
 import tkinter
 
@@ -118,6 +120,8 @@ def check_win(board):
 def show_winner(winner):
     text = f'{winner} won'
     label.config(text=text)
+    time.sleep(15)
+    root.quit()
 
 
 board = [
